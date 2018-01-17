@@ -1,12 +1,47 @@
 import React from 'react';
 import Ticket from './Ticket';
 
+const masterTicketList = [
+  {
+    names: 'Thato and Haley',
+    location: '3A',
+    issue: 'Firebase won\'t save record. Halp.'
+  },
+  {
+    names: 'Sleater and Kinney',
+    location: '4B',
+    issue: 'Fox image not displaying on page, can only see duck?'
+  },
+  {
+    names: 'Imani & Jacob',
+    location: '9F',
+    issue: 'Donkey picture not displaying on hover in Zoology app. :('
+  }
+];
+
 function TicketList(){
+  const myStyledComponentStyles = {
+    backgroundStyle: {
+      backgroundColor: 'bisque',
+      fontFamily: 'sans-serif',
+      padding: '25px'
+    },
+    flexStyle: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }
+  }
   return (
-    <Ticket
-      location="3A"
-      names="Thato and Haley"
-      issue="Firebase will not save record!"/>
+    <div style={myStyledComponentStyles.flexStyle}>
+      <hr/>
+      {masterTicketList.map((ticket, index) =>
+        <Ticket names={ticket.names}
+          location={ticket.location}
+          issue={ticket.issue}
+          key={index}/>
+      )}
+    </div>
   );
 }
 
