@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 function Ticket(props){
   return(
     <div>
@@ -12,14 +11,9 @@ function Ticket(props){
     </div>
   );
 }
-
-
-
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  formattedWaitTime: PropTypes.string 
-};
-
+  formattedWaitTime:PropTypes.string};
 export default Ticket;
